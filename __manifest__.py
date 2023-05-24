@@ -6,7 +6,7 @@
         Pruebas que se realizaran""",
 
     'description': """
-        Long description of module's purpose
+        Modelo creado para ir probando Git
     """,
 
     'author': "My Company",
