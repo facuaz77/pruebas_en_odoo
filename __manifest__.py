@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Mi aplicacion",
+    'name': "Pruebas de campos",
 
     'summary': """
         Pruebas que se realizaran""",
