@@ -68,6 +68,7 @@
                     <field name="voto"/>
                     <field name="voto2"/>
                     <field name="voto3"/>
+                    <field name="voto4"/>
                 </tree>
             </field>
         </record>
@@ -99,32 +100,70 @@
                                 <field name="altura" placeholder="Cm"></field>
                             </h3>
                         </group>
-                        
-
-                        
+                
                         <group>
                         
                            <label class="oe_edit_only" for="voto" string="¿Vas a votar?"/>
                            <h3> <field name="voto" placeholder="Seleccionar"/> </h3>
                            <label class="oe_edit_only" for="voto2" string="Marcar si es Voto en blanco"/>
-                            <h3><field name="voto2" placeholder="Marcar si es Voto en blanco" /> </h3>
+                            <h3><field name="voto2" /> </h3>
                             <label class="oe_edit_only" for="voto3" string="Marcar si prefieres no decirlo"/>
-                            <h3><field name="voto3" placeholder="Marcar si prefieres no decirlo"/> </h3>
+                            <h3><field name="voto3"/> </h3>
+                            <label class="oe_edit_only" for="voto4" string="Candidato"/>
+                            <h3><field name="voto4"/> </h3>
                         
                         </group>
-
-                        
 
                     </group>
 
                     </sheet>
 
-                    
-
-
                 </form>
                 </field>
             </record>
+
+
+
+            <record id="pruebas_view_search" model="ir.ui.view">
+              <field name="name">pruebas.view.search</field>
+              <field name="model">pruebas.pruebas</field>
+              <field name="arch" type="xml">
+                <search string="">
+
+                
+                    <field name="name"/>
+                    <field name="age"/>
+                    <field name="voto" />
+                    <field name="voto2" />
+                    <field name="voto3" />
+                    <field name="voto4" />
+                    <filter name="name" string="Nombre" context="{'group_by_name': 'name'}"/>
+                    <filter name="age" string="Edad" context="{'group_by_age': 'age'}"/>
+                    <filter name="voto2" string="Voto en blanco" context="{'voto2': 'voto2'}"/>
+                    <filter name="voto3" string="Prefiero no decirlo" context="{'voto3': 'voto3'}"/>
+                    <filter name="voto4" string="Candidato" context="{'voto4': 'voto4'}"/>
+                  
+                </search>
+              </field>
+            </record>
+
+            <!-- Graph view-->
+            <record id="pruebas.view_graph" model="ir.ui.view">
+              <field name="name">pruebas.view.graph</field>
+              <field name="model">pruebas.pruebas</field>
+              <field name="arch" type="xml">
+                <graph string="Analisis de votos" type="bar">
+                <field name="voto2" string="Voto en blanco"/>
+                <field name="voto3" string="Prefiero no decirlo"/>
+                <field name="voto4" string="Candidato"/>
+
+
+                  
+                </graph>
+              </field>
+            </record>
+
+            
 
 
             <!-- Definicion de menús -->
@@ -133,7 +172,7 @@
             <record model="ir.actions.act_window" id="pruebas.pruebas_action_window">
                 <field name="name">Pruebas</field>
                 <field name="res_model">pruebas.pruebas</field>
-                <field name="view_mode">tree,form</field>
+                <field name="view_mode">tree,form,graph</field>
             </record>
 
             <!-- Top menu item -->

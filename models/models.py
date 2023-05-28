@@ -20,6 +20,7 @@
 
 
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 class pruebas(models.Model):
      _name = 'pruebas.pruebas'
@@ -29,7 +30,21 @@ class pruebas(models.Model):
      age = fields.Integer(string='Edad', required=True)
      altura = fields.Float(string='Altura', required=True)
      voto = fields.Selection(selection=[('s','Si'),('n','No')], string="¿Vas a votar?", required=True)
-     voto2 = fields.Boolean(string='Si')
-     voto3 = fields.Boolean(string='No')
+     voto2 = fields.Boolean(string='Voto en blanco')
+     voto3 = fields.Boolean(string='Prefiero no decirlo')
+     voto4 = fields.Boolean(string='Candidato')
+
+     @api.constrains('age')
+     def _check_age(self):
+        for record in self:
+            if record.age <= 16:
+                raise ValidationError('La edad debe ser mayor de 16 años.')
+
+
+     
+         
+
+
+
 
 
