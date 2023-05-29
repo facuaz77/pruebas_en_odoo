@@ -2,60 +2,60 @@
     <data>
         <!-- explicit list view definition -->
         <!--
-                                    <record model="ir.ui.view" id="pruebas.list">
-                                      <field name="name">pruebas list</field>
-                                      <field name="model">pruebas.pruebas</field>
-                                      <field name="arch" type="xml">
-                                        <tree>
-                                          <field name="name"/>
-                                          <field name="value"/>
-                                          <field name="value2"/>
-                                        </tree>
-                                      </field>
-                                    </record>
-                                -->
+                                                    <record model="ir.ui.view" id="pruebas.list">
+                                                      <field name="name">pruebas list</field>
+                                                      <field name="model">pruebas.pruebas</field>
+                                                      <field name="arch" type="xml">
+                                                        <tree>
+                                                          <field name="name"/>
+                                                          <field name="value"/>
+                                                          <field name="value2"/>
+                                                        </tree>
+                                                      </field>
+                                                    </record>
+                                                -->
 
         <!-- actions opening views on models -->
         <!--
-                                    <record model="ir.actions.act_window" id="pruebas.action_window">
-                                      <field name="name">pruebas window</field>
-                                      <field name="res_model">pruebas.pruebas</field>
-                                      <field name="view_mode">tree,form</field>
-                                    </record>
-                                -->
+                                                    <record model="ir.actions.act_window" id="pruebas.action_window">
+                                                      <field name="name">pruebas window</field>
+                                                      <field name="res_model">pruebas.pruebas</field>
+                                                      <field name="view_mode">tree,form</field>
+                                                    </record>
+                                                -->
 
         <!-- server action to the one above -->
         <!--
-                                    <record model="ir.actions.server" id="pruebas.action_server">
-                                      <field name="name">pruebas server</field>
-                                      <field name="model_id" ref="model_pruebas_pruebas"/>
-                                      <field name="state">code</field>
-                                      <field name="code">
-                                        action = {
-                                          "type": "ir.actions.act_window",
-                                          "view_mode": "tree,form",
-                                          "res_model": model._name,
-                                        }
-                                      </field>
-                                    </record>
-                                -->
+                                                    <record model="ir.actions.server" id="pruebas.action_server">
+                                                      <field name="name">pruebas server</field>
+                                                      <field name="model_id" ref="model_pruebas_pruebas"/>
+                                                      <field name="state">code</field>
+                                                      <field name="code">
+                                                        action = {
+                                                          "type": "ir.actions.act_window",
+                                                          "view_mode": "tree,form",
+                                                          "res_model": model._name,
+                                                        }
+                                                      </field>
+                                                    </record>
+                                                -->
 
         <!-- Top menu item -->
         <!--
-                                    <menuitem name="pruebas" id="pruebas.menu_root"/>
-                                -->
+                                                    <menuitem name="pruebas" id="pruebas.menu_root"/>
+                                                -->
         <!-- menu categories -->
         <!--
-                                    <menuitem name="Menu 1" id="pruebas.menu_1" parent="pruebas.menu_root"/>
-                                    <menuitem name="Menu 2" id="pruebas.menu_2" parent="pruebas.menu_root"/>
-                                -->
+                                                    <menuitem name="Menu 1" id="pruebas.menu_1" parent="pruebas.menu_root"/>
+                                                    <menuitem name="Menu 2" id="pruebas.menu_2" parent="pruebas.menu_root"/>
+                                                -->
         <!-- actions -->
         <!--
-                                    <menuitem name="List" id="pruebas.menu_1_list" parent="pruebas.menu_1"
-                                              action="pruebas.action_window"/>
-                                    <menuitem name="Server to list" id="pruebas" parent="pruebas.menu_2"
-                                              action="pruebas.action_server"/>
-                                -->
+                                                    <menuitem name="List" id="pruebas.menu_1_list" parent="pruebas.menu_1"
+                                                              action="pruebas.action_window"/>
+                                                    <menuitem name="Server to list" id="pruebas" parent="pruebas.menu_2"
+                                                              action="pruebas.action_server"/>
+                                                -->
 
         <!-- View Tree -->
             <record model="ir.ui.view" id="pruebas.list_view"> <field name="name">pruebas.view.tree</field>
@@ -82,110 +82,150 @@
             <field name="arch" type="xml">
                 <form string="Datos del usuario">
 
-                  <sheet>
-                    <group>
-
-                        
+                    <sheet>
                         <group>
-                        <label class="oe_edit_only" for="name" string="Nombre del Usuario"/>
-                            <h3>
-                                <field name="name" placeholder="Nombre"></field>
-                            </h3>
-                            <label class="oe_edit_only" for="age" string="Edad"/>
-                            <h3>
-                                <field name="age" placeholder="Edad"></field>
-                            </h3>
-                            <label class="oe_edit_only" for="altura" string="Altura"/>
-                            <h3>
-                                <field name="altura" placeholder="Cm"></field>
-                            </h3>
-                        </group>
-                
-                        <group>
-                        
-                           <label class="oe_edit_only" for="voto" string="¿Vas a votar?"/>
-                           <h3> <field name="voto" placeholder="Seleccionar"/> </h3>
-                           <label class="oe_edit_only" for="voto2" string="Marcar si es Voto en blanco"/>
-                            <h3><field name="voto2" /> </h3>
-                            <label class="oe_edit_only" for="voto3" string="Marcar si prefieres no decirlo"/>
-                            <h3><field name="voto3"/> </h3>
-                            <label class="oe_edit_only" for="voto4" string="Candidato"/>
-                            <h3><field name="voto4"/> </h3>
-                        
-                        </group>
 
-                    </group>
+
+                            <group>
+                                <label class="oe_edit_only" for="name" string="Nombre del Usuario"/>
+                                <h3>
+                                    <field name="name" placeholder="Nombre"></field>
+                                </h3>
+                                <label class="oe_edit_only" for="age" string="Edad"/>
+                                <h3>
+                                    <field name="age" placeholder="Edad"></field>
+                                </h3>
+                                <label class="oe_edit_only" for="altura" string="Altura"/>
+                                <h3>
+                                    <field name="altura" placeholder="Cm"></field>
+                                </h3>
+                            </group>
+
+                            <group>
+
+                                <label class="oe_edit_only" for="voto" string="¿Vas a votar?"/>
+                                <h3>
+                                    <field name="voto" placeholder="Seleccionar"/>
+                                </h3>
+                                <label class="oe_edit_only" for="voto2" string="Marcar si es Voto en blanco"/>
+                                <h3><field name="voto2"/>
+                                </h3>
+                                <label class="oe_edit_only" for="voto3" string="Marcar si prefieres no decirlo"/>
+                                <h3><field name="voto3"/>
+                                </h3>
+                                <label class="oe_edit_only" for="voto4" string="Candidato"/>
+                                <h3><field name="voto4"/>
+                                </h3>
+
+                            </group>
+
+                        </group>
 
                     </sheet>
 
                 </form>
-                </field>
-            </record>
+            </field>
+        </record>
 
 
-
-            <record id="pruebas_view_search" model="ir.ui.view">
-              <field name="name">pruebas.view.search</field>
-              <field name="model">pruebas.pruebas</field>
-              <field name="arch" type="xml">
+        <record id="pruebas_view_search" model="ir.ui.view">
+            <field name="name">pruebas.view.search</field>
+            <field name="model">pruebas.pruebas</field>
+            <field name="arch" type="xml">
                 <search string="">
 
-                
+
                     <field name="name"/>
                     <field name="age"/>
-                    <field name="voto" />
-                    <field name="voto2" />
-                    <field name="voto3" />
-                    <field name="voto4" />
+                    <field name="voto"/>
+                    <field name="voto2"/>
+                    <field name="voto3"/>
+                    <field name="voto4"/>
                     <filter name="name" string="Nombre" context="{'group_by_name': 'name'}"/>
                     <filter name="age" string="Edad" context="{'group_by_age': 'age'}"/>
                     <filter name="voto2" string="Voto en blanco" context="{'voto2': 'voto2'}"/>
                     <filter name="voto3" string="Prefiero no decirlo" context="{'voto3': 'voto3'}"/>
                     <filter name="voto4" string="Candidato" context="{'voto4': 'voto4'}"/>
-                  
+
                 </search>
-              </field>
-            </record>
+            </field>
+        </record>
 
-            <!-- Graph view-->
-            <record id="pruebas.view_graph" model="ir.ui.view">
-              <field name="name">pruebas.view.graph</field>
-              <field name="model">pruebas.pruebas</field>
-              <field name="arch" type="xml">
+        <!-- Graph view-->
+        <record id="pruebas.view_graph" model="ir.ui.view">
+            <field name="name">pruebas.view.graph</field>
+            <field name="model">pruebas.pruebas</field>
+            <field name="arch" type="xml">
                 <graph string="Analisis de votos" type="bar">
-                <field name="voto2" string="Voto en blanco"/>
-                <field name="voto3" string="Prefiero no decirlo"/>
-                <field name="voto4" string="Candidato"/>
+                    <field name="voto2" string="Voto en blanco"/>
+                    <field name="voto3" string="Prefiero no decirlo"/>
+                    <field name="voto4" string="Candidato"/>
 
 
-                  
                 </graph>
-              </field>
-            </record>
+            </field>
+        </record>
 
+
+        <!-- Kanban View -->
+
+        <record id="pruebas.view_kanban" model="ir.ui.view">
+            <field name="name">pruebas.view.kanban</field>
+            <field name="model">pruebas.pruebas</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <templates>
+                        <t t-name="kanban-box">
+
+
+                            <field name="name"/>
+
+                            <field name="voto2"/>
+
+                            <field name="voto3"/>
+
+                            <field name="voto4"/>
+
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+      <!-- Pivot View-->
+        <record id="pruebas_view_pivot" model="ir.ui.view">
+          <field name="name">pruebas.view.pivot</field>
+          <field name="model">pruebas.pruebas</field>
+          <field name="arch" type="xml">
+            <pivot string="" disable_linking="true">
             
+            <field name="name" />
+            <field name="voto2" />
+            <field name="voto3" />
+            <field name="voto4" />
+              
+            </pivot>
+          </field>
+        </record>
 
 
-            <!-- Definicion de menús -->
+        <!-- Definicion de menús -->
 
 
-            <record model="ir.actions.act_window" id="pruebas.pruebas_action_window">
-                <field name="name">Pruebas</field>
-                <field name="res_model">pruebas.pruebas</field>
-                <field name="view_mode">tree,form,graph</field>
-            </record>
+        <record model="ir.actions.act_window" id="pruebas.pruebas_action_window">
+            <field name="name">Pruebas</field>
+            <field name="res_model">pruebas.pruebas</field>
+            <field name="view_mode">tree,form,graph,kanban,pivot</field>
+        </record>
 
-            <!-- Top menu item -->
-            <menuitem
-            name="Pruebas" id="pruebas.menu_root"/>
-
-
-            <!-- Menu categories -->
-
-            <menuitem name="Pruebas" id="pruebas.pruebas_menu" parent="pruebas.menu_root" action="pruebas.pruebas_action_window"/>
+        <!-- Top menu item -->
+        <menuitem
+        name="Pruebas" id="pruebas.menu_root"/>
 
 
-        
+        <!-- Menu categories -->
+
+        <menuitem name="Pruebas" id="pruebas.pruebas_menu" parent="pruebas.menu_root" action="pruebas.pruebas_action_window"/>
 
 
     </data>
