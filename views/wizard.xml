@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+        <!-- Definición de la acción de la ventana emergente -->
+        <record id="action_menu_wizard" model="ir.actions.act_window">
+            <field name="name">Votacion</field>
+            <field name="res_model">pruebas.votacion</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <!-- Definición de la vista del formulario de la ventana emergente -->
+        <record model="ir.ui.view" id="pruebas.votacion_wizard_form">
+            <field name="name">pruebas.votacion.form</field>
+            <field name="model">pruebas.votacion</field>
+            <field name="arch" type="xml">
+                <form string="Votacion">
+
+                <group>
+                    <group>
+
+                        
+                       <label class="oe_edit_only" for="voto" string="Su candidato"/>
+                        <h3>
+                            <field name="voto" placeholder="Seleccionar"/>
+                        </h3>
+
+                    </group>
+
+                    </group>
+
+                </form>
+            </field>
+        </record>
+
+        <!-- Vínculo de la ventana emergente con el menú -->
+        <menuitem id="pruebas.votacion_menu_root" name="Votacion" parent="pruebas.menu_root" action="action_menu_wizard"/>
+    </data>
+</odoo>

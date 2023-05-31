@@ -39,6 +39,25 @@ class pruebas(models.Model):
         for record in self:
             if record.age <= 16:
                 raise ValidationError('La edad debe ser mayor de 16 años.')
+            
+
+
+class votacion(models.TransientModel):
+    _name = 'pruebas.votacion'
+
+    
+    voto = fields.Selection(selection=[('c1','Candidato 1'),('c2','Candidato 2') , ('c3' , 'Candidato 3')], string="Candidatos", required=True)
+
+    
+
+
+
+
+# class votacion(models,Model):
+ #   _name = 'pruebas.votacion'
+  #  _description = 'Votacion' 
+
+
 
 
      

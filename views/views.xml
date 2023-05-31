@@ -58,7 +58,8 @@
                                                 -->
 
         <!-- View Tree -->
-            <record model="ir.ui.view" id="pruebas.list_view"> <field name="name">pruebas.view.tree</field>
+            <record model="ir.ui.view" id="pruebas.list_view"> 
+            <field name="name">pruebas.view.tree</field>
             <field name="model">pruebas.pruebas</field>
             <field name="arch" type="xml">
                 <tree>
