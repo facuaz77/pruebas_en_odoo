@@ -1,5 +1,6 @@
 <odoo>
     <data>
+    
         <!-- Definición de la acción de la ventana emergente -->
         <record id="action_menu_wizard" model="ir.actions.act_window">
             <field name="name">Votacion</field>

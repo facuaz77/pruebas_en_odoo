@@ -52,7 +52,7 @@ class votacion(models.TransientModel):
 
 
 
-
+#
 # class votacion(models,Model):
  #   _name = 'pruebas.votacion'
   #  _description = 'Votacion' 
