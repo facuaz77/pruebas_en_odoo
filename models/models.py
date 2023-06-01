@@ -25,6 +25,8 @@ from odoo.exceptions import ValidationError
 class pruebas(models.Model):
      _name = 'pruebas.pruebas'
      _description = 'probando'
+
+     
      
      name = fields.Char(string='Nombre', required=True)
      age = fields.Integer(string='Edad', required=True)
@@ -39,7 +41,14 @@ class pruebas(models.Model):
         for record in self:
             if record.age <= 16:
                 raise ValidationError('La edad debe ser mayor de 16 años.')
-            
+
+    
+     @api.onchange('name')
+     def action_test(self):
+         self.name = "Facundo Alaniz"
+
+     
+           
 
 
 class votacion(models.TransientModel):

@@ -83,6 +83,13 @@
             <field name="arch" type="xml">
                 <form string="Datos del usuario">
 
+
+                <header>
+
+                <button type="object" name="action_test" string="Boton" class="oe_highlight"/>
+
+                </header>
+
                     <sheet>
                         <group>
 
