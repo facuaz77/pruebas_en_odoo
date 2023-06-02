@@ -217,6 +217,87 @@
         </record>
 
 
+#------------------------------------------------------------------------------------------------------------- 
+
+<!-- Formulario heredado vista -->
+
+<record model="ir.ui.view" id="formulario.list"> <field name="name">Formulario list</field>
+            <field name="model">formulario.formulario</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="apellido"/>
+                    <field name="edad"/>
+                    <field name="sexo"/>
+                    <field name="fecha_nacimiento"/>
+                    <field name="telefono"/>
+                    <field name="email"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- View Form -->
+
+
+
+        <record id="formulario_view_form" model="ir.ui.view">
+            <field name="name">formulario.view.form</field>
+            <field name="model">formulario.formulario</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+
+                            <label class="oe_edit_only" for="name" string="Nombre"/>
+
+                            <h3><field name="name" placeholder="Name"></field></h3>
+
+
+
+                             <label class="oe_edit_only" for="apellido" string="Apellido"/>
+
+                            <h3><field name="apellido" placeholder="Apellido"></field></h3>
+
+
+                             <label class="oe_edit_only" for="edad" string="Edad"/>
+
+                            <h3><field name="edad" placeholder="age"></field></h3>
+
+                             <label class="oe_edit_only" for="email" string="Email"/>
+
+                            <h3><field name="email" placeholder="Email"></field></h3>
+
+                        </group>
+
+
+                        <group>
+
+                        <field name="sexo"  placeholder="Sexo"/>
+                        <field name="fecha_nacimiento"></field>
+                        <field name="telefono" placeholder="+xx xxx xxx"></field>
+                          
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+
+
+         <record model="ir.actions.act_window" id="formulario.action_window">
+            <field name="name">Formulario Heredado</field>
+            <field name="res_model">formulario.formulario</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+
+
+
+
+
         <!-- Definicion de menús -->
 
 
@@ -228,12 +309,18 @@
 
         <!-- Top menu item -->
         <menuitem
-        name="Pruebas" id="pruebas.menu_root"/>
+        name="Pruebas" id="pruebas.menu_root" />
+
+        
+
+
+    
 
 
         <!-- Menu categories -->
 
         <menuitem name="Pruebas" id="pruebas.pruebas_menu" parent="pruebas.menu_root" action="pruebas.pruebas_action_window"/>
+        <menuitem name="Formulario" id="formulario.formulario_menu" parent="pruebas.menu_root" action="formulario.action_window"/>
 
 
     </data>
