@@ -57,6 +57,19 @@ class votacion(models.TransientModel):
     
     voto = fields.Selection(selection=[('c1','Candidato 1'),('c2','Candidato 2') , ('c3' , 'Candidato 3')], string="Candidatos", required=True)
 
+
+
+class formulario(models.Model):
+    _inherit = "formulario.formulario"
+    _description = "Agregando Modelo"
+
+    name = fields.Char(string="Nombre" , required=True)
+    apellido = fields.Char(string="Apellido" , required=True)
+    edad = fields.Integer(string="Edad", required=True)
+    sexo = fields.Selection([('M', 'Masculino'), ('F', 'Femenino')], string="Sexo", required=True)
+    telefono = fields.Char(string="Telefono", required=True)
+    email = fields.Char(string="Email", required=True)
+    fecha_nacimiento = fields.Date(string="Fecha de nacimiento", required=True)
     
 
 
